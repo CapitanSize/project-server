@@ -7,9 +7,6 @@ class PostController {
     async create(req, res, next) {
         try {
             const {title, content, rating, typeId, userId, author} = req.body
-            /*const {imagine} = req.files
-            let fileName = uuid.v4() + ".jpg"
-            imagine.mv(path.resolve(__dirname, '..', 'static', fileName))*/
             const post = await Post.create({
                 title, content, rating, typeId, userId, author
             })
